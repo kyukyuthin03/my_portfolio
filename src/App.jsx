@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import Navbar from './components/Navbar.jsx'
 import Hero from './components/Hero.jsx'
+// Certificates section is now embedded in Experience
 import About from './components/About.jsx'
 import Skills from './components/Skills.jsx'
 import Projects from './components/Projects.jsx'

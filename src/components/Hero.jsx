@@ -1,4 +1,6 @@
 import React from 'react'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Hero = () => {
   return (
@@ -9,6 +11,7 @@ const Hero = () => {
             Hi, I'm <span className="gradient-text">Kyu Kyu Thin</span>
           </h1>
           <p className="subtitle">Software Engineering Student • Junior Front‑End Developer</p>
+          <p className='subtitle'>Software engineering student skilled in JavaScript and React, creating user-friendly web apps and gaining hands-on experience</p>
           <div className="cta-row">
             <a className="btn primary" href="/assets/CV.pdf" download>
               Download CV
@@ -19,7 +22,7 @@ const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Hire Me
+              Hire Me <FontAwesomeIcon icon={faArrowRight} />
             </a>
           </div>
         </div>

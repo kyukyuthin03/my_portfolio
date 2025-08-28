@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 
 const experiences = [
   {
@@ -13,7 +13,7 @@ const experiences = [
   },
 ]
 
-const certificates = [
+const certificatesAll = [
   {
     title: 'Foundations of User Experience (UX) Design',
     issuer: 'Google',
@@ -32,9 +32,30 @@ const certificates = [
     image: '/assets/certificates/CertificateOfProgramming.png',
     link: '/assets/certificates/CertificateOfProgramming.pdf',
   },
+  {
+    title: 'Programming Foundations with JavaScript, HTML & CSS',
+    issuer: 'Duke University',
+    image: '/assets/certificates/CertificateOfProgramming.png',
+    link: '/assets/certificates/CertificateOfProgramming.pdf',
+  },
+  {
+    title: 'Programming Foundations with JavaScript, HTML & CSS',
+    issuer: 'Duke University',
+    image: '/assets/certificates/CertificateOfProgramming.png',
+    link: '/assets/certificates/CertificateOfProgramming.pdf',
+  },
+  {
+    title: 'Programming Foundations with JavaScript, HTML & CSS',
+    issuer: 'Duke University',
+    image: '/assets/certificates/CertificateOfProgramming.png',
+    link: '/assets/certificates/CertificateOfProgramming.pdf',
+  },
 ]
 
 const Experience = () => {
+  const [showAll, setShowAll] = useState(false)
+  const visibleCertificates = useMemo(() => (showAll ? certificatesAll : certificatesAll.slice(0, 3)), [showAll])
+
   useEffect(() => {
     const cards = document.querySelectorAll('.cert-card')
     const observer = new IntersectionObserver(
@@ -74,25 +95,38 @@ const Experience = () => {
         </div>
 
         <div className="certificates-block">
-          <h3 style={{ marginTop: 28, marginBottom: 12 }}>Certificates</h3>
+          <h2 style={{ marginTop: 32, marginBottom: 6, textAlign: 'center'}}>My Certificates</h2>
+          <p className="body-text" style={{ marginTop: 0, marginBottom: 16 }}>
+            I have done various programming courses to increase my programming skills and I'm sharing a few of them.
+          </p>
           <div className="grid cert-grid">
-            {certificates.map((c) => (
-              <article className="card cert-card" key={c.title + c.issuer}>
-                <a className="card-link" href={c.link} target="_blank" rel="noopener noreferrer">
-                  <img
-                    className="cert-image"
-                    src={c.image}
-                    alt={`${c.title} certificate`}
-                    onError={(e) => { e.currentTarget.src = '/assets/profile.png' }}
-                  />
-                  <div className="card-body">
-                    <h4 className="card-title">{c.title}</h4>
-                    <p className="muted" style={{ margin: 0 }}>{c.issuer}</p>
-                  </div>
-                </a>
+            {visibleCertificates.map((c) => (
+              <article key={c.title + c.issuer}>
+                <img
+                  className="cert-image"
+                  src={c.image}
+                  alt={`${c.title} certificate`}
+                  onError={(e) => { e.currentTarget.src = '/assets/profile.png' }}
+                />
+                <div className="card-body">
+                  <h4 className="card-title" style={{fontSize: 18}}>{c.title}</h4>
+                  <p className="muted" style={{ margin: 0 }}>{c.issuer}</p>
+                </div>
+                <div className="card-actions">
+                  <a className="btn small" href={c.link} target="_blank" rel="noreferrer">
+                    View Certificate
+                  </a>
+                </div>
               </article>
             ))}
           </div>
+          {certificatesAll.length > 3 && (
+            <div style={{ display: 'grid', placeItems: 'center', marginTop: 24 }}>
+              <button className="btn sunset-btn" onClick={() => setShowAll(s => !s)}>
+                {showAll ? 'Show Less' : 'Show More'}
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </section>

@@ -20,7 +20,7 @@ const Skills = () => {
   return (
     <section id="skills" className="section">
       <div className="container">
-        <h2 className="section-title">Skills</h2>
+        <h2 className="section-title">Technical Skills</h2>
         <div className="skills-grid">
           <ul className="skill-list">
             {left.map(s => (
@@ -62,6 +62,31 @@ const Skills = () => {
               </li>
             ))}
           </ul>
+        </div>
+
+        <div className="additional-skills">
+          <h3 className="additional-skills-title">Languages & Soft Skills</h3>
+          <div className="additional-skills-grid">
+            <div className="languages-card">
+              <h4>Languages</h4>
+              <ul className="language-list">
+                <li><strong>English:</strong> Intermediate</li>
+                <li><strong>Burmese:</strong> Native</li>
+                <li><strong>Japanese:</strong> N3</li>
+              </ul>
+            </div>
+            <div className="soft-skills-card">
+              <h4>Soft Skills</h4>
+              <ul className="soft-skills-list">
+                <li>Problem Solving</li>
+                <li>Team Collaboration</li>
+                <li>Time Management</li>
+                <li>Adaptability</li>
+                <li>Communication</li>
+                <li>Critical Thinking</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>
