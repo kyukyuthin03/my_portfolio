@@ -1,16 +1,16 @@
 import React from 'react'
 
 const skills = [
-  { name: 'JavaScript (ES202x)', level: 90 },
-  { name: 'TypeScript', level: 80 },
-  { name: 'React', level: 88 },
+  { name: 'JavaScript', level: 90 },
+  { name: 'TypeScript', level: 30 },
+  { name: 'React', level: 80 },
   { name: 'Vite', level: 85 },
-  { name: 'Redux / Zustand', level: 75 },
-  { name: 'CSS3 / SASS', level: 86 },
-  { name: 'Tailwind / CSS Modules', level: 78 },
-  { name: 'Responsive & Accessibility', level: 84 },
+  { name: 'Redux', level: 50 },
+  { name: 'CSS', level: 90 },
+  { name: 'Tailwind CSS', level: 80 },
+  { name: 'Java(Spring Boot)', level: 70 },
   { name: 'Node.js', level: 70 },
-  { name: 'Git & CI/CD', level: 76 },
+  { name: 'Github', level: 80 },
 ]
 
 const Skills = () => {

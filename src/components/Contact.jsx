@@ -22,7 +22,7 @@ const Contact = () => {
           <div className="contact-info">
             <h3 className="contact-title">Get in Touch</h3>
             <div className="contact-details">
-              <p>123 Fifth Avenue, New York,<br/>NY 10160, USA</p>
+              <p>Mae Fah Luang University, Thasud, Mueang Chiang Rai, Chiang Rai, Thailand</p>
               <p><a className="contact-email" href="mailto:kyukyuthin7403@gmail.com">kyukyuthin7403@gmail.com</a></p>
             </div>
             <div className="social-row" aria-label="social links">

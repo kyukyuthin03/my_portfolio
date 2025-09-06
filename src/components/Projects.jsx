@@ -15,10 +15,26 @@ const featuredProjects = [
   {
     title: 'Coffee Bean E-commerce',
     description: 'Coffee Bean is a modern, visually appealing coffee shop website designed to showcase the shop’s menu, highlight customer experiences, and create an inviting online presence. With a focus on clean design and responsiveness, this project brings together beautiful imagery, engaging testimonials, and smooth navigation to deliver a delightful digital café experience. This project demonstrates how thoughtful design and user-friendly layouts can help small businesses, like coffee shops, establish a strong and welcoming online presence.',
-    image: '/assets/projects/coffee-bean.png', // Placeholder - replace with actual project image
+    image: '/assets/projects/coffee-bean.png', 
     codeUrl: 'https://github.com/kyukyuthin03/Coffee-bean',
     liveUrl: 'https://coffee-bean-two.vercel.app/',
     tags: ['JavaScript', 'HTML', 'CSS', 'SASS']
+  },
+  {
+    title: 'Budget Bee - Personal Finance Tracker',
+    description: 'This project was developed as part of a group effort, where I contributed as a Fullstack Developer. Together, we built a comprehensive Personal Finance Tracker that enables users to track expenses, manage budgets, set savings goals, and visualize their financial activities through an intuitive, user-friendly dashboard.',
+    image: '/assets/projects/budget-bee.png', 
+    codeUrl: 'https://github.com/kyukyuthin03/budget-bee',
+    liveUrl: 'https://coffee-bean-two.vercel.app/',
+    tags: ['React.js', 'javaScript', 'HTML', 'CSS', 'Java', 'Spring Boot', 'MySQL']
+  },
+  {
+    title: 'EcoGo - Sustainable Living Tracker',
+    description: 'EcoGo is a group project where I contributed as a Fullstack Developer. The mobile application is designed to help users track eco-friendly habits and participate in environmental campaigns through a point-based reward system that motivates sustainable actions. Users can join campaigns, monitor their progress, and engage with their community, making it easier to adopt a greener lifestyle while collectively contributing to a positive environmental impact.',
+    image: '/assets/projects/budget-bee.png', 
+    codeUrl: 'https://github.com/kyukyuthin03/ecogo',
+    liveUrl: 'https://play.google.com/store/apps/details?id=com.ecogo.v2&hl=en',
+    tags: ["React Native","JavaScript","TypeScript", "Firebase (Authentication, Firestore)", "React Context API or Redux",]
   }
 ]
 
