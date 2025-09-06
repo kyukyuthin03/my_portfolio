@@ -26,13 +26,13 @@ const Contact = () => {
               <p><a className="contact-email" href="mailto:kyukyuthin7403@gmail.com">kyukyuthin7403@gmail.com</a></p>
             </div>
             <div className="social-row" aria-label="social links">
-              <a className="social-link" href="https://facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <a className="social-link" href="https://www.facebook.com/kyu.kyu.thin.70448" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                 <FontAwesomeIcon icon={faFacebook} size="lg" />
               </a>
               <a className="social-link" href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                 <FontAwesomeIcon icon={faInstagram} size="lg" />
               </a>
-              <a className="social-link" href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <a className="social-link" href="www.linkedin.com/in/kyu-kyu-thin-273208214" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 <FontAwesomeIcon icon={faLinkedin} size="lg" />
               </a>
             </div>

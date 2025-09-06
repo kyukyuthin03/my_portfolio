@@ -5,20 +5,20 @@ import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 
 const featuredProjects = [
   {
-    title: 'Spotify Data Visualizer',
-    description: 'A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.',
-    image: '/assets/profile.png', // Placeholder - replace with actual project image
-    codeUrl: 'https://github.com/yourusername/spotify-visualizer',
-    liveUrl: 'https://spotify-visualizer-demo.netlify.app',
-    tags: ['React', 'Node.js', 'Spotify API', 'Chart.js']
+    title: 'Omnifood Restaurant',
+    description: 'A web app for personalized healthy eating. Users choose their diet, favorite foods, and restrictions to generate a weekly meal plan tailored to their lifestyle. Partner restaurants prepare and deliver the meals daily in select cities. The service is offered as a monthly subscription, with options to receive one or two meals per day for maximum convenience and long-term health benefits.',
+    image: '/assets/projects/omnifood.png', 
+    codeUrl: 'https://github.com/kyukyuthin03/Omnifood-',
+    liveUrl: 'https://omnifood-kappa-brown.vercel.app/',
+    tags: ['JavaScript', 'HTML', 'CSS']
   },
   {
-    title: 'E-Commerce Platform',
-    description: 'A modern e-commerce platform with user authentication, product management, shopping cart functionality, and secure payment processing. Features responsive design, admin dashboard, and real-time inventory updates.',
-    image: '/assets/profile.png', // Placeholder - replace with actual project image
-    codeUrl: 'https://github.com/yourusername/ecommerce-platform',
-    liveUrl: 'https://ecommerce-demo.netlify.app',
-    tags: ['React', 'Firebase', 'Stripe', 'Tailwind CSS']
+    title: 'Coffee Bean E-commerce',
+    description: 'Coffee Bean is a modern, visually appealing coffee shop website designed to showcase the shop’s menu, highlight customer experiences, and create an inviting online presence. With a focus on clean design and responsiveness, this project brings together beautiful imagery, engaging testimonials, and smooth navigation to deliver a delightful digital café experience. This project demonstrates how thoughtful design and user-friendly layouts can help small businesses, like coffee shops, establish a strong and welcoming online presence.',
+    image: '/assets/projects/coffee-bean.png', // Placeholder - replace with actual project image
+    codeUrl: 'https://github.com/kyukyuthin03/Coffee-bean',
+    liveUrl: 'https://coffee-bean-two.vercel.app/',
+    tags: ['JavaScript', 'HTML', 'CSS', 'SASS']
   }
 ]
 

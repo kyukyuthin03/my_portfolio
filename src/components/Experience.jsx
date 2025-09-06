@@ -15,10 +15,16 @@ const experiences = [
 
 const certificatesAll = [
   {
-    title: 'Foundations of User Experience (UX) Design',
-    issuer: 'Google',
-    image: '/assets/certificates/CertificateOfUXDesign.png',
-    link: '/assets/certificates/CertificateOfUXDesign.pdf',
+    title: 'Web Development Fundamentals',
+    issuer: 'Youth Career Institute(YCI)',
+    image: '/assets/certificates/WebDevelopment.png',
+    link: '/assets/certificates/WebDevelopment.pdf',
+  },
+  {
+    title: 'Responsive Web Design',
+    issuer: 'freeCodeCamp',
+    image: '/assets/certificates/Responsive Web Design.png',
+    link: '/assets/certificates/Responsive Web Design.png',
   },
   {
     title: 'Introduction to Front-End Development',
@@ -33,22 +39,16 @@ const certificatesAll = [
     link: '/assets/certificates/CertificateOfProgramming.pdf',
   },
   {
-    title: 'Programming Foundations with JavaScript, HTML & CSS',
-    issuer: 'Duke University',
-    image: '/assets/certificates/CertificateOfProgramming.png',
-    link: '/assets/certificates/CertificateOfProgramming.pdf',
+    title: 'Advanced Styling with Responsive Design',
+    issuer: 'University of Michigan',
+    image: '/assets/certificates/CertificateOfAdvancedStyling.png',
+    link: '/assets/certificates/CertificateOfAdvancedStyling.pdf',
   },
   {
-    title: 'Programming Foundations with JavaScript, HTML & CSS',
-    issuer: 'Duke University',
-    image: '/assets/certificates/CertificateOfProgramming.png',
-    link: '/assets/certificates/CertificateOfProgramming.pdf',
-  },
-  {
-    title: 'Programming Foundations with JavaScript, HTML & CSS',
-    issuer: 'Duke University',
-    image: '/assets/certificates/CertificateOfProgramming.png',
-    link: '/assets/certificates/CertificateOfProgramming.pdf',
+    title: 'Version Control',
+    issuer: 'Meta (Coursera)',
+    image: '/assets/certificates/Version Control.png',
+    link: '/assets/certificates/Version Control.pdf',
   },
 ]
 
