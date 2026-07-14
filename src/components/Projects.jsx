@@ -5,83 +5,122 @@ import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 
 const featuredProjects = [
   {
-    title: 'Omnifood Restaurant',
-    description: 'A web app for personalized healthy eating. Users choose their diet, favorite foods, and restrictions to generate a weekly meal plan tailored to their lifestyle. Partner restaurants prepare and deliver the meals daily in select cities. The service is offered as a monthly subscription, with options to receive one or two meals per day for maximum convenience and long-term health benefits.',
-    image: '/assets/projects/omnifood.png', 
-    codeUrl: 'https://github.com/kyukyuthin03/Omnifood-',
-    liveUrl: 'https://omnifood-kappa-brown.vercel.app/',
-    tags: ['JavaScript', 'HTML', 'CSS']
+    title: 'Finance Tracker - Personal Finance Management',
+    descriptionPoints: [
+      'Developed a full-stack application to track income, expenses, budgets, and savings goals',
+      'Built RESTful APIs with Spring Boot and integrated with React frontend using Axios',
+      'Implemented secure authentication using Spring Security and BCrypt',
+      'Deployed frontend and backend on Google Cloud with Docker and CI/CD pipelines'
+    ],
+    image: '/assets/projects/budget-bee.png', 
+    codeUrl: 'https://github.com/eaindraysupan1005/project-budget-bee',
+    liveUrl: 'https://project-budget-bee.vercel.app/',
+    tags: ['React.js', 'HTML', 'CSS', 'Bootstrap', 'Java (Spring Boot)', 'MySQL']
   },
   {
-    title: 'Coffee Bean E-commerce',
-    description: 'Coffee Bean is a modern, visually appealing coffee shop website designed to showcase the shop’s menu, highlight customer experiences, and create an inviting online presence. With a focus on clean design and responsiveness, this project brings together beautiful imagery, engaging testimonials, and smooth navigation to deliver a delightful digital café experience. This project demonstrates how thoughtful design and user-friendly layouts can help small businesses, like coffee shops, establish a strong and welcoming online presence.',
-    image: '/assets/projects/coffee-bean.png', 
-    codeUrl: 'https://github.com/kyukyuthin03/Coffee-bean',
-    liveUrl: 'https://coffee-bean-two.vercel.app/',
-    tags: ['JavaScript', 'HTML', 'CSS', 'SASS']
+    title: 'EcoGo – Sustainable Living Mobile Application',
+    descriptionPoints: [
+      'Designed a mobile app to encourage eco-friendly habits using a gamified points and level system',
+      'Implemented features such as habit tracking, leaderboard, campaign participation, and analytics',
+      'Integrated Firebase for real-time database, authentication, and backend services',
+      'Enhanced user engagement through notifications, reminders, and community campaigns'
+    ],
+    video: 'https://www.youtube.com/embed/6z8-N721bgQ?t=3s&autoplay=1&mute=1&loop=1&playlist=6z8-N721bgQ', 
+    codeUrl: 'https://github.com/kyukyuthin03/EcoGo',
+    liveUrl: 'https://play.google.com/store/apps/details?id=com.ecogo.v2',
+    tags: ['React Native', 'TypeScript', 'Firebase', 'Redux']
   },
   {
-    title: 'Budget Bee - Personal Finance Tracker',
-    description: 'This project was developed as part of a group effort, where I contributed as a Fullstack Developer. Together, we built a comprehensive Personal Finance Tracker that enables users to track expenses, manage budgets, set savings goals, and visualize their financial activities through an intuitive, user-friendly dashboard.',
+    title: 'Lumora – Mental Health Tracking & Risk Assessment',
+    descriptionPoints: [
+      'Developed a backend system for mental health monitoring with mood tracking and risk prediction',
+      'Integrated machine learning models to assess depression risk based on user data',
+      'Implemented JWT-based authentication and automated alert system for high-risk users',
+      'Built APIs for data visualization, chatbot integration, and email notifications'
+    ],
     image: '/assets/projects/budget-bee.png', 
     codeUrl: 'https://github.com/kyukyuthin03/budget-bee',
     liveUrl: 'https://coffee-bean-two.vercel.app/',
-    tags: ['React.js', 'javaScript', 'HTML', 'CSS', 'Java', 'Spring Boot', 'MySQL']
+    tags: ['React Native', 'TypeScript', 'FastAPI', 'scikit-learn', 'SQLAlchemy', 'JWT']
   },
-  {
-    title: 'EcoGo - Sustainable Living Tracker',
-    description: 'EcoGo is a group project where I contributed as a Fullstack Developer. The mobile application is designed to help users track eco-friendly habits and participate in environmental campaigns through a point-based reward system that motivates sustainable actions. Users can join campaigns, monitor their progress, and engage with their community, making it easier to adopt a greener lifestyle while collectively contributing to a positive environmental impact.',
-    image: '/assets/projects/budget-bee.png', 
-    codeUrl: 'https://github.com/kyukyuthin03/ecogo',
-    liveUrl: 'https://play.google.com/store/apps/details?id=com.ecogo.v2&hl=en',
-    tags: ["React Native","JavaScript","TypeScript", "Firebase (Authentication, Firestore)", "React Context API or Redux",]
-  }
 ]
 
 const Projects = () => {
   return (
-    <section id="projects" className="section">
-      <div className="container">
-        <h2 className="section-title">Featured Projects</h2>
+    <section id="projects" className="border-b border-(--border) scroll-mt-20">
+      <div className="mx-auto w-full max-w-6xl px-5 py-10 lg:px-8">
+        <h2 className="mb-10 text-center text-3xl font-extrabold tracking-tight text-(--text)">Projects</h2>
         
-        {featuredProjects.map((project, index) => (
-          <div key={project.title} className={`featured-project ${index % 2 === 0 ? 'project-left' : 'project-right'}`}>
-            <div className="project-content">
-              <div className="project-text">
-                <span className="project-label">Featured Project</span>
-                <h3 className="project-title">{project.title}</h3>
-                <div className="project-description">
-                  <p>{project.description}</p>
+        {featuredProjects.map((project, index) => {
+          const isReversed = index % 2 === 1
+
+          return (
+          <div key={project.title} className="mb-6 overflow-hidden rounded-4xl border border-(--border) bg-(--surface) shadow-[0_20px_60px_rgba(0,0,0,0.08)]">
+            <div className="grid gap-0 lg:grid-cols-2">
+              <div className={`flex flex-col justify-center p-6 sm:p-8 lg:p-10 ${isReversed ? 'lg:order-2' : 'lg:order-1'}`}>
+                <h3 className="text-2xl font-bold tracking-tight text-(--text)">{project.title}</h3>
+                <div className="mt-4">
+                  {project.descriptionPoints ? (
+                    <ul className="space-y-3 text-(--muted)">
+                      {project.descriptionPoints.map(point => (
+                        <li key={point} className="flex gap-3 leading-7">
+                          <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-(--primary)" />
+                          <span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="leading-7 text-(--muted)">{project.description}</p>
+                  )}
                 </div>
-                <div className="project-tags">
+                <div className="mt-6 flex flex-wrap gap-2">
                   {project.tags.map(tag => (
-                    <span key={tag} className="project-tag">{tag}</span>
+                    <span key={tag} className="rounded-full border border-(--border) bg-[rgba(255,142,83,0.08)] px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-(--text)">{tag}</span>
                   ))}
                 </div>
-                <div className="project-buttons">
-                  <a href={project.codeUrl} target="_blank" rel="noreferrer" className="btn project-btn code-btn">
+                <div className="mt-8 flex flex-wrap gap-3">
+                  <a href={project.codeUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-2xl border border-(--border) bg-(--surface) px-5 py-3 font-semibold text-(--text) transition hover:-translate-y-0.5 hover:border-(--primary)">
                     Code
                     <FontAwesomeIcon icon={faGithub} style={{fontSize:'18px'}}/>
                   </a>
-                  <a href={project.liveUrl} target="_blank" rel="noreferrer" className="btn project-btn live-btn">
+                  <a href={project.liveUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-2xl bg-(--primary) px-5 py-3 font-semibold text-white shadow-[0_15px_35px_rgba(255,107,107,0.28)] transition hover:-translate-y-0.5 hover:opacity-95">
                     Live Demo
                     <FontAwesomeIcon icon={faArrowUpRightFromSquare} style={{fontSize:'16px'}} />
                   </a>
                 </div>
               </div>
-              
-              <div className="project-image">
-                <div className="project-image-bg">
-                  <img 
-                    src={project.image} 
-                    alt={`${project.title} project preview`}
-                    className="project-preview"
-                  />
+
+                  {project.image ? (
+                                  <div className={`flex items-center justify-center bg-[linear-gradient(135deg,rgba(255,107,107,0.18),rgba(255,142,83,0.12))] p-4 sm:p-6 lg:p-8 ${isReversed ? 'lg:order-1' : 'lg:order-2'}`}>
+                <div className="overflow-hidden rounded-3xl border border-(--border) bg-(--bg)">
+                    <img
+                      src={project.image}
+                      alt={`${project.title} project preview`}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
                 </div>
-              </div>
-            </div>
+                  ) : ''}
+                  {project.video ? (
+                                  <div className={`bg-[linear-gradient(135deg,rgba(255,107,107,0.18),rgba(255,142,83,0.12))] p-4 sm:p-6 lg:p-8 ${isReversed ? 'lg:order-1' : 'lg:order-2'}`}>
+                <div className="overflow-hidden rounded-3xl py-20">
+                    <iframe
+  src={project.video}
+  title="YouTube video player"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerPolicy="strict-origin-when-cross-origin"
+  allowFullScreen
+    width="720"
+  height="300"
+  className="w-full max-w-4xl rounded-2xl"
+/>
+
+                  </div></div>) : ''}
+                </div>
           </div>
-        ))}
+          )
+        })}
       </div>
     </section>
   )

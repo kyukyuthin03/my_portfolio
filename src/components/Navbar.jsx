@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
+
 
 const Navbar = ({ sections, theme, onToggleTheme }) => {
   const [isOpen, setIsOpen] = useState(false)
-  const [activeId, setActiveId] = useState('hero')
+  const [activeId, setActiveId] = useState('aboutme')
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -33,25 +34,48 @@ const Navbar = ({ sections, theme, onToggleTheme }) => {
   }
 
   return (
-    <header className="navbar">
-      <nav className="container">
-        <div className="brand" onClick={() => handleNavClick('hero')} role="button" aria-label="Go to home">
-          <span className="brand-accent">&lt;/&gt;</span> My Portfolio
-        </div>
-        <button className="hamburger" aria-label="Toggle menu" aria-expanded={isOpen} onClick={() => setIsOpen(o => !o)}>
+    <header className="sticky top-0 z-50 border-b border-(--border) bg-[color-mix(in_oklab,var(--bg)_82%,transparent)] backdrop-blur-md">
+      <nav className="relative mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-5 py-4 lg:px-8">
+        <button
+          type="button"
+          className="inline-flex items-center gap-2 text-lg font-extrabold tracking-tight text-(--text) transition hover:opacity-80"
+          onClick={() => handleNavClick('aboutme')}
+          aria-label="Go to about me"
+        >
+          <span className="text-(--primary)">&lt;/&gt;</span>
+          <span>My Portfolio</span>
+        </button>
+
+        <button
+          type="button"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-(--border) bg-(--surface) text-(--text) shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition hover:-translate-y-0.5 hover:shadow-lg md:hidden"
+          aria-label="Toggle menu"
+          aria-expanded={isOpen}
+          onClick={() => setIsOpen(o => !o)}
+        >
           <FontAwesomeIcon icon={faBars} size="lg" />
         </button>
-        <ul className={`nav-links ${isOpen ? 'open' : ''}`}>
+
+        <ul className={`${isOpen ? 'max-h-128' : 'max-h-0'} absolute left-0 top-full z-40 w-full overflow-hidden border-b border-(--border) bg-[color-mix(in_oklab,var(--bg)_90%,transparent)] px-5 transition-[max-height] duration-200 md:static md:flex md:max-h-none md:w-auto md:items-center md:gap-2 md:border-0 md:bg-transparent md:px-0`}>
           {sections.map(s => (
-            <li key={s.id}>
-              <button className={`nav-link ${activeId === s.id ? 'active' : ''}`} onClick={() => handleNavClick(s.id)}>
+            <li key={s.id} className="py-2 md:py-0">
+              <button
+                type="button"
+                className={`w-full rounded-2xl border px-4 py-3 text-left text-sm font-medium transition md:w-auto md:px-4 md:py-2 ${activeId === s.id ? 'border-(--border) bg-(--surface) text-(--text)' : 'border-transparent text-(--muted) hover:border-(--border) hover:text-(--text)'}`}
+                onClick={() => handleNavClick(s.id)}
+              >
                 {s.label}
               </button>
             </li>
           ))}
-          <li>
-            <button className="mode-toggle" onClick={onToggleTheme} aria-label="Toggle dark mode">
-              {theme === 'dark' ? '☀️' : '🌙'}
+          <li className="py-2 md:py-0">
+            <button
+              type="button"
+              className="w-full rounded-2xl border border-(--border) bg-white px-4 py-3 text-left text-sm font-medium text-(--text) transition md:w-auto md:px-4 md:py-2"
+              onClick={onToggleTheme}
+              aria-label="Toggle dark mode"
+            >
+              {theme === 'dark' ? <FontAwesomeIcon icon={faSun} style={{color: "#ef8e38",}} /> : <FontAwesomeIcon icon={faMoon} />}
             </button>
           </li>
         </ul>

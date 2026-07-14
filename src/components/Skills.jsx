@@ -1,93 +1,74 @@
 import React from 'react'
 
-const skills = [
-  { name: 'JavaScript', level: 90 },
-  { name: 'TypeScript', level: 30 },
-  { name: 'React', level: 80 },
-  { name: 'Vite', level: 85 },
-  { name: 'Redux', level: 50 },
-  { name: 'CSS', level: 90 },
-  { name: 'Tailwind CSS', level: 80 },
-  { name: 'Java(Spring Boot)', level: 70 },
-  { name: 'Node.js', level: 70 },
-  { name: 'Github', level: 80 },
+const technicalSkillGroups = [
+  {
+    title: 'Languages',
+    items: ['Java', 'JavaScript (ES6+)'],
+  },
+  {
+    title: 'Frontend',
+    items: ['HTML5', 'Tailwind CSS', 'Bootstrap', 'React.js', 'React Native'],
+  },
+  {
+    title: 'Backend',
+    items: ['Spring Boot', 'RESTful APIs', 'MVC Architecture'],
+  },
+  {
+    title: 'Database',
+    items: ['MySQL'],
+  },
+  {
+    title: 'Tools',
+    items: ['Git', 'GitHub', 'Postman', 'VS Code'],
+  },
+  {
+    title: 'Concepts',
+    items: ['OOP', 'Agile/Scrum', 'API Integration', 'JSON'],
+  },
 ]
 
+// const softSkills = [
+//   'Problem Solving',
+//   'Team Collaboration',
+//   'Time Management',
+//   'Adaptability',
+//   'Communication',
+//   'Critical Thinking',
+// ]
+
 const Skills = () => {
-  const midpoint = Math.ceil(skills.length / 2)
-  const left = skills.slice(0, midpoint)
-  const right = skills.slice(midpoint)
   return (
-    <section id="skills" className="section">
-      <div className="container">
-        <h2 className="section-title">Technical Skills</h2>
-        <div className="skills-grid">
-          <ul className="skill-list">
-            {left.map(s => (
-              <li key={s.name} className="skill-item">
-                <div className="skill-header">
-                  <span className="skill-name">{s.name}</span>
-                  <span className="skill-val muted">{s.level}%</span>
-                </div>
-                <div className="progress" aria-label={`${s.name} proficiency`}>
-                  <span
-                    className="progress-bar"
-                    style={{ width: `${s.level}%` }}
-                    role="progressbar"
-                    aria-valuemin={0}
-                    aria-valuemax={100}
-                    aria-valuenow={s.level}
-                  ></span>
-                </div>
-              </li>
-            ))}
-          </ul>
-          <ul className="skill-list">
-            {right.map(s => (
-              <li key={s.name} className="skill-item">
-                <div className="skill-header">
-                  <span className="skill-name">{s.name}</span>
-                  <span className="skill-val muted">{s.level}%</span>
-                </div>
-                <div className="progress" aria-label={`${s.name} proficiency`}>
-                  <span
-                    className="progress-bar"
-                    style={{ width: `${s.level}%` }}
-                    role="progressbar"
-                    aria-valuemin={0}
-                    aria-valuemax={100}
-                    aria-valuenow={s.level}
-                  ></span>
-                </div>
-              </li>
-            ))}
-          </ul>
+    <section id="skills" className="border-b border-[var(--border)] py-10 scroll-mt-20">
+      <div className="mx-auto w-full max-w-6xl px-5 py-0 lg:px-8">
+        <h2 className="mb-10 text-center text-3xl font-extrabold tracking-tight text-[var(--text)]">Technical Skills</h2>
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {technicalSkillGroups.map(group => (
+            <article key={group.title} className="rounded-[1.75rem] border border-[var(--border)] bg-[var(--surface)] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.06)] transition hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(0,0,0,0.1)]">
+              <h3 className="text-lg font-bold text-[var(--text)]">{group.title}</h3>
+              <ul className="mt-4 flex flex-wrap gap-3" aria-label={`${group.title} skills`}>
+                {group.items.map(item => (
+                  <li key={item} className="rounded-full border border-[var(--border)] bg-[rgba(255,142,83,0.08)] px-4 py-2 text-sm font-medium text-[var(--text)]">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
         </div>
 
-        <div className="additional-skills">
-          <h3 className="additional-skills-title">Languages & Soft Skills</h3>
+        {/* <div className="additional-skills">
+          <h3 className="additional-skills-title">Soft Skills</h3>
           <div className="additional-skills-grid">
-            <div className="languages-card">
-              <h4>Languages</h4>
-              <ul className="language-list">
-                <li><strong>English:</strong> Intermediate</li>
-                <li><strong>Burmese:</strong> Native</li>
-                <li><strong>Japanese:</strong> N3</li>
-              </ul>
-            </div>
             <div className="soft-skills-card">
               <h4>Soft Skills</h4>
               <ul className="soft-skills-list">
-                <li>Problem Solving</li>
-                <li>Team Collaboration</li>
-                <li>Time Management</li>
-                <li>Adaptability</li>
-                <li>Communication</li>
-                <li>Critical Thinking</li>
+                {softSkills.map(skill => (
+                  <li key={skill}>{skill}</li>
+                ))}
               </ul>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   )

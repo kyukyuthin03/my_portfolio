@@ -1,11 +1,11 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import Navbar from './components/Navbar.jsx'
-import Hero from './components/Hero.jsx'
-// Certificates section is now embedded in Experience
-import About from './components/About.jsx'
+import Hero from './components/Aboutme.jsx'
+import Education from './components/Education.jsx'
+import Experience from './components/Experience.jsx'
+import Certificates from './components/Certificates.jsx'
 import Skills from './components/Skills.jsx'
 import Projects from './components/Projects.jsx'
-import Experience from './components/Experience.jsx'
 import Contact from './components/Contact.jsx'
 
 const App = () => {
@@ -24,23 +24,24 @@ const App = () => {
   const toggleTheme = () => setTheme(t => (t === 'dark' ? 'light' : 'dark'))
 
   const sections = useMemo(() => [
-    { id: 'hero', label: 'Home' },
-    { id: 'about', label: 'About' },
+    { id: 'aboutme', label: 'About Me' },
+    { id: 'education', label: 'Education' },
     { id: 'skills', label: 'Skills' },
-    { id: 'projects', label: 'Projects' },
     { id: 'experience', label: 'Experience' },
-    { id: 'contact', label: 'Contact' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'certificates', label: 'Certificates' },
   ], [])
 
   return (
-    <div>
+    <div className="min-h-screen bg-(--bg) text-(--text)">
       <Navbar sections={sections} theme={theme} onToggleTheme={toggleTheme} />
-      <main>
+      <main className="overflow-x-hidden">
         <Hero />
-        <About />
+        <Education />
         <Skills />
-        <Projects />
         <Experience />
+        <Projects />
+        <Certificates />
         <Contact />
       </main>
     </div>

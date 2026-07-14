@@ -1,62 +1,31 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
 const Contact = () => {
-  const [form, setForm] = useState({ name: '', email: '', message: '' })
-  const [status, setStatus] = useState('')
-
-  const handleChange = e => setForm({ ...form, [e.target.name]: e.target.value })
-
-  const handleSubmit = e => {
-    e.preventDefault()
-    setStatus('Thanks! I will get back to you soon.')
-    setForm({ name: '', email: '', message: '' })
-  }
-
   return (
-    <section id="contact" className="section">
-      <div className="container">
-        <h2 className="section-title">Contact</h2>
-        <div className="contact-grid">
-          <div className="contact-info">
-            <h3 className="contact-title">Get in Touch</h3>
-            <div className="contact-details">
+    <section id="contact" className="scroll-mt-20">
+      <div className="mx-auto w-full max-w-6xl px-5 py-8 lg:px-8">
+        <h2 className="mb-2 text-center text-3xl font-extrabold tracking-tight text-(--text)">Contact</h2>
+        <h3 className="text-xl text-center font-semibold text-(--text)">Let's work together!</h3>
+        <div className="rounded-4xl p-6 text-center sm:p-8">
+          <div className="space-y-6">
+            <div className="space-y-2 text-(--muted)">
+              <p><a className="font-semibold text-(--text) transition hover:text-(--primary)" href="mailto:kyukyuthin7403@gmail.com">kyukyuthin7403@gmail.com</a></p>
               <p>Mae Fah Luang University, Thasud, Mueang Chiang Rai, Chiang Rai, Thailand</p>
-              <p><a className="contact-email" href="mailto:kyukyuthin7403@gmail.com">kyukyuthin7403@gmail.com</a></p>
             </div>
-            <div className="social-row" aria-label="social links">
-              <a className="social-link" href="https://www.facebook.com/kyu.kyu.thin.70448" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <div className="flex items-center justify-center gap-3" aria-label="social links">
+              <a className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-(--border) bg-(--bg) text-(--text) transition hover:-translate-y-0.5 hover:border-(--primary) hover:text-(--primary)" href="https://www.facebook.com/kyu.kyu.thin.70448" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                 <FontAwesomeIcon icon={faFacebook} size="lg" />
               </a>
-              <a className="social-link" href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <a className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-(--border) bg-(--bg) text-(--text) transition hover:-translate-y-0.5 hover:border-(--primary) hover:text-(--primary)" href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                 <FontAwesomeIcon icon={faInstagram} size="lg" />
               </a>
-              <a className="social-link" href="www.linkedin.com/in/kyu-kyu-thin-273208214" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <a className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-(--border) bg-(--bg) text-(--text) transition hover:-translate-y-0.5 hover:border-(--primary) hover:text-(--primary)" href="www.linkedin.com/in/kyu-kyu-thin-273208214" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 <FontAwesomeIcon icon={faLinkedin} size="lg" />
               </a>
             </div>
           </div>
-          <form className="form" onSubmit={handleSubmit}>
-            <div className="form-row">
-              <label>
-                Name
-                <input name="name" value={form.name} onChange={handleChange} required />
-              </label>
-              <label>
-                Email
-                <input type="email" name="email" value={form.email} onChange={handleChange} required />
-              </label>
-            </div>
-            <label>
-              Message
-              <textarea name="message" rows="5" value={form.message} onChange={handleChange} required />
-            </label>
-            <div className="form-actions">
-              <button className="btn primary" type="submit">Send Message</button>
-              {status && <span className="status">{status}</span>}
-            </div>
-          </form>
         </div>
       </div>
     </section>
