@@ -6,6 +6,7 @@ const Hero = () => {
   return (
     <section id="aboutme" className="border-b border-(--border) scroll-mt-20">
       <div className="mx-auto grid w-full max-w-6xl gap-12 px-5 py-10 lg:grid-cols-[1.25fr_0.95fr] lg:items-center lg:px-8 lg:py-28">
+        <div className="order-2 space-y-6 lg:order-0">
         <div className="space-y-6">
           <h1 className="max-w-3xl text-4xl font-extrabold tracking-tight text-(--text) sm:text-5xl lg:text-6xl">
             Hi, I&apos;m <span style={{ backgroundImage: 'var(--gradient)' }} className="bg-clip-text text-transparent">Kyu Kyu Thin</span>
@@ -21,8 +22,8 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-wrap gap-3">
-            <a className="inline-flex items-center justify-center rounded-2xl bg-(--primary) px-5 py-3 font-semibold text-white shadow-[0_15px_35px_rgba(255,107,107,0.28)] transition hover:-translate-y-0.5 hover:opacity-95" href="/assets/CV.pdf" download>
-              My Resume
+            <a className="inline-flex items-center justify-center rounded-2xl bg-(--primary) px-5 py-3 font-semibold text-white shadow-[0_15px_35px_rgba(255,107,107,0.28)] transition hover:-translate-y-0.5 hover:opacity-95" href="/assets/KyuKyuThin_Resume.pdf" target="_blank" rel="noopener noreferrer">
+              View Resume
             </a>
             <a
               className="inline-flex items-center justify-center gap-2 rounded-2xl border border-(--border) bg-(--surface) px-5 py-3 font-semibold text-(--text) shadow-sm transition hover:-translate-y-0.5 hover:border-(--primary)"
@@ -34,17 +35,18 @@ const Hero = () => {
             </a>
           </div>
         </div>
-        <div className="flex justify-center lg:justify-end" aria-hidden>
-          <div className="rounded-full border border-(--border) bg-(--surface) p-4 shadow-[0_25px_80px_rgba(0,0,0,0.12)]">
-            <div style={{ backgroundImage: 'var(--gradient)' }} className="rounded-full p-1">
-              <img
-                src="/assets/profile.png"
-                alt="Portrait of Kyu Kyu Thin"
-                className="aspect-square w-[min(82vw,24rem)] rounded-full object-cover"
-              />
-            </div>
-          </div>
         </div>
+        <div className="order-1 flex justify-center lg:order-0 lg:justify-end" aria-hidden>
+  <div className="rounded-full border border-(--border) bg-(--surface) p-4 shadow-[0_25px_80px_rgba(0,0,0,0.12)]">
+    <div style={{ backgroundImage: 'var(--gradient)' }} className="rounded-full p-1">
+      <img
+        src="/assets/profile.png"
+        alt="Portrait of Kyu Kyu Thin"
+        className="aspect-square w-[min(50vw,12rem)] rounded-full object-cover sm:w-[min(60vw,16rem)] lg:w-[min(82vw,24rem)]"
+      />
+    </div>
+  </div>
+</div>
       </div>
     </section>
   )

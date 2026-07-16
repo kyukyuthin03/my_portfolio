@@ -3,7 +3,7 @@ import React from 'react'
 const technicalSkillGroups = [
   {
     title: 'Languages',
-    items: ['Java', 'JavaScript (ES6+)'],
+    items: ['Java', 'JavaScript (ES6+)', 'TypeScript']
   },
   {
     title: 'Frontend',
@@ -11,7 +11,7 @@ const technicalSkillGroups = [
   },
   {
     title: 'Backend',
-    items: ['Spring Boot', 'RESTful APIs', 'MVC Architecture'],
+    items: ['Spring Boot', 'RESTful APIs'],
   },
   {
     title: 'Database',
@@ -23,18 +23,10 @@ const technicalSkillGroups = [
   },
   {
     title: 'Concepts',
-    items: ['OOP', 'Agile/Scrum', 'API Integration', 'JSON'],
+    items: ['OOP', 'Agile/Scrum'],
   },
 ]
 
-// const softSkills = [
-//   'Problem Solving',
-//   'Team Collaboration',
-//   'Time Management',
-//   'Adaptability',
-//   'Communication',
-//   'Critical Thinking',
-// ]
 
 const Skills = () => {
   return (

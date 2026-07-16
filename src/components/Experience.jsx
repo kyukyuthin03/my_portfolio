@@ -26,8 +26,8 @@ const Experience = () => {
             <article key={e.role + e.company} className="relative rounded-[1.75rem] border border-(--border) bg-(--surface) p-6 pl-6 shadow-[0_20px_60px_rgba(0,0,0,0.06)] sm:pl-10">
               <span className="absolute left-3 top-8 h-4 w-4 rounded-full border-4 border-(--bg) bg-(--primary) sm:left-4" />
               <div className="space-y-2">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-xl font-bold tracking-tight text-(--text)">{e.role}</h3>
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                  <h3 className="text-xl font-bold tracking-tight text-(--text) ms-3">{e.role}</h3>
                   <h3 className="text-md font-semibold text-(--text)">{e.period}</h3>
                 </div>
                 <span className="text-md font-bold text-(--text)">
@@ -35,7 +35,12 @@ const Experience = () => {
                 </span>
               </div>
               <ul className="mt-4 space-y-3 text-(--muted)">
-                  {e.bullets.map(b => <li key={b}>{b}</li>)}
+                  {e.bullets.map(b => 
+                    <li key={b} className="flex gap-3 leading-7">
+                      <span>-</span>
+                          <span>{b}</span>
+                        </li>
+                  )}
                 </ul>
             </article>
           ))}

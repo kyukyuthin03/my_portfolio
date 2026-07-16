@@ -25,7 +25,7 @@ const featuredProjects = [
       'Integrated Firebase for real-time database, authentication, and backend services',
       'Enhanced user engagement through notifications, reminders, and community campaigns'
     ],
-    video: 'https://www.youtube.com/embed/6z8-N721bgQ?t=3s&autoplay=1&mute=1&loop=1&playlist=6z8-N721bgQ', 
+    video: 'https://www.youtube.com/embed/6z8-N721bgQ?t=3s&autoplay=1&mute=1&loop=1&playlist=6z8-N721bgQ&rel=0&modestbranding=1&controls=1&showinfo=0', 
     codeUrl: 'https://github.com/kyukyuthin03/EcoGo',
     liveUrl: 'https://play.google.com/store/apps/details?id=com.ecogo.v2',
     tags: ['React Native', 'TypeScript', 'Firebase', 'Redux']
@@ -38,9 +38,9 @@ const featuredProjects = [
       'Implemented JWT-based authentication and automated alert system for high-risk users',
       'Built APIs for data visualization, chatbot integration, and email notifications'
     ],
-    image: '/assets/projects/budget-bee.png', 
-    codeUrl: 'https://github.com/kyukyuthin03/budget-bee',
-    liveUrl: 'https://coffee-bean-two.vercel.app/',
+    image: '/assets/projects/Lumora.png', 
+    codeUrl: 'https://github.com/kyuthin74/Lumora',
+    liveUrl: null,
     tags: ['React Native', 'TypeScript', 'FastAPI', 'scikit-learn', 'SQLAlchemy', 'JWT']
   },
 ]
@@ -57,7 +57,7 @@ const Projects = () => {
           return (
           <div key={project.title} className="mb-6 overflow-hidden rounded-4xl border border-(--border) bg-(--surface) shadow-[0_20px_60px_rgba(0,0,0,0.08)]">
             <div className="grid gap-0 lg:grid-cols-2">
-              <div className={`flex flex-col justify-center p-6 sm:p-8 lg:p-10 ${isReversed ? 'lg:order-2' : 'lg:order-1'}`}>
+              <div className={`flex flex-col justify-center p-6 sm:p-8 lg:p-10 order-2 ${isReversed ? 'lg:order-2' : 'lg:order-1'}`}>
                 <h3 className="text-2xl font-bold tracking-tight text-(--text)">{project.title}</h3>
                 <div className="mt-4">
                   {project.descriptionPoints ? (
@@ -83,15 +83,19 @@ const Projects = () => {
                     Code
                     <FontAwesomeIcon icon={faGithub} style={{fontSize:'18px'}}/>
                   </a>
+                  {project.liveUrl ?(
                   <a href={project.liveUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-2xl bg-(--primary) px-5 py-3 font-semibold text-white shadow-[0_15px_35px_rgba(255,107,107,0.28)] transition hover:-translate-y-0.5 hover:opacity-95">
                     Live Demo
                     <FontAwesomeIcon icon={faArrowUpRightFromSquare} style={{fontSize:'16px'}} />
-                  </a>
+                  </a> 
+                  ) : ''}
+                
+                  
                 </div>
               </div>
 
                   {project.image ? (
-                                  <div className={`flex items-center justify-center bg-[linear-gradient(135deg,rgba(255,107,107,0.18),rgba(255,142,83,0.12))] p-4 sm:p-6 lg:p-8 ${isReversed ? 'lg:order-1' : 'lg:order-2'}`}>
+                                  <div className={`flex items-center justify-center bg-[linear-gradient(135deg,rgba(255,107,107,0.18),rgba(255,142,83,0.12))] p-4 sm:p-6 lg:p-8 order-1 ${isReversed ? 'lg:order-1' : 'lg:order-2'}`}>
                 <div className="overflow-hidden rounded-3xl border border-(--border) bg-(--bg)">
                     <img
                       src={project.image}
@@ -102,8 +106,8 @@ const Projects = () => {
                 </div>
                   ) : ''}
                   {project.video ? (
-                                  <div className={`bg-[linear-gradient(135deg,rgba(255,107,107,0.18),rgba(255,142,83,0.12))] p-4 sm:p-6 lg:p-8 ${isReversed ? 'lg:order-1' : 'lg:order-2'}`}>
-                <div className="overflow-hidden rounded-3xl py-20">
+                                  <div className={`bg-[linear-gradient(135deg,rgba(255,107,107,0.18),rgba(255,142,83,0.12))] p-4 sm:p-6 lg:p-8 order-1 ${isReversed ? 'lg:order-1' : 'lg:order-2'}`}>
+                <div className="overflow-hidden rounded-3xl py-2 lg:py-20">
                     <iframe
   src={project.video}
   title="YouTube video player"

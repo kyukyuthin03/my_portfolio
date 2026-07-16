@@ -43,7 +43,7 @@ const Navbar = ({ sections, theme, onToggleTheme }) => {
           aria-label="Go to about me"
         >
           <span className="text-(--primary)">&lt;/&gt;</span>
-          <span>My Portfolio</span>
+          <span>Portfolio</span>
         </button>
 
         <button
@@ -56,22 +56,22 @@ const Navbar = ({ sections, theme, onToggleTheme }) => {
           <FontAwesomeIcon icon={faBars} size="lg" />
         </button>
 
-        <ul className={`${isOpen ? 'max-h-128' : 'max-h-0'} absolute left-0 top-full z-40 w-full overflow-hidden border-b border-(--border) bg-[color-mix(in_oklab,var(--bg)_90%,transparent)] px-5 transition-[max-height] duration-200 md:static md:flex md:max-h-none md:w-auto md:items-center md:gap-2 md:border-0 md:bg-transparent md:px-0`}>
+        <ul className={`${isOpen ? 'max-h-128' : 'max-h-0'} absolute right-0 top-full z-40 w-full overflow-hidden border-b border-(--border) bg-[color-mix(in_oklab,var(--bg)_90%,transparent)] px-5 transition-[max-height] duration-200 md:static md:flex md:max-h-none md:w-auto md:items-center md:gap-2 md:border-0 md:bg-transparent md:px-0`}>
           {sections.map(s => (
-            <li key={s.id} className="py-2 md:py-0">
+            <li key={s.id} className="py-2 md:py-0 flex justify-end">
               <button
                 type="button"
-                className={`w-full rounded-2xl border px-4 py-3 text-left text-sm font-medium transition md:w-auto md:px-4 md:py-2 ${activeId === s.id ? 'border-(--border) bg-(--surface) text-(--text)' : 'border-transparent text-(--muted) hover:border-(--border) hover:text-(--text)'}`}
+                className={`w-auto rounded-2xl border px-4 py-3 text-end text-sm font-medium transition md:w-auto md:px-4 md:py-2 ${activeId === s.id ? 'border-(--border) bg-(--surface) text-(--text)' : 'border-transparent text-(--muted) hover:border-(--border) hover:text-(--text)'}`}
                 onClick={() => handleNavClick(s.id)}
               >
                 {s.label}
               </button>
             </li>
           ))}
-          <li className="py-2 md:py-0">
+          <li className="py-2 md:py-0 flex justify-end">
             <button
               type="button"
-              className="w-full rounded-2xl border border-(--border) bg-white px-4 py-3 text-left text-sm font-medium text-(--text) transition md:w-auto md:px-4 md:py-2"
+              className="w-auto rounded-2xl border border-(--border) bg-white px-4 py-3 text-right text-sm font-medium text-(--text) transition md:w-auto md:px-4 md:py-2"
               onClick={onToggleTheme}
               aria-label="Toggle dark mode"
             >
