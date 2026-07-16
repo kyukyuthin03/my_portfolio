@@ -5,19 +5,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const Hero = () => {
   return (
     <section id="aboutme" className="border-b border-(--border) scroll-mt-20">
-      <div className="mx-auto grid w-full max-w-6xl gap-12 px-5 py-10 lg:grid-cols-[1.25fr_0.95fr] lg:items-center lg:px-8 lg:py-28">
+      <div className="mx-auto grid w-full max-w-6xl gap-8 lg:gap-12 px-5 py-10 lg:grid-cols-[1.25fr_0.95fr] lg:items-center lg:px-8 lg:py-28">
         <div className="order-2 space-y-6 lg:order-0">
         <div className="space-y-6">
-          <h1 className="max-w-3xl text-4xl font-extrabold tracking-tight text-(--text) sm:text-5xl lg:text-6xl">
+          <h1 className="max-w-3xl font-extrabold tracking-tight text-(--text) text-3xl lg:text-6xl">
             Hi, I&apos;m <span style={{ backgroundImage: 'var(--gradient)' }} className="bg-clip-text text-transparent">Kyu Kyu Thin</span>
           </h1>
           <div className="inline-flex rounded-full border border-(--border) bg-(--surface) px-4 py-2 text-sm font-medium text-(--muted) shadow-sm">
             Software Engineering Student • Junior Software Developer
           </div>
-          <p className="max-w-2xl text-base leading-8 text-(--muted) sm:text-lg">
+          <p className="max-w-2xl text-base leading-6 lg:leading-8 text-(--muted) sm:text-lg">
             A Software Engineering student at Mae Fah Luang University with experience in frontend, backend, and mobile development.
           </p>
-          <p className="max-w-2xl text-base leading-8 text-(--muted) sm:text-lg">
+          <p className="max-w-2xl text-base leading-6 lg:leading-8 text-(--muted) sm:text-lg">
             Proficient in JavaScript, React, React Native, and Java (Spring Boot), with a focus on building responsive and user-friendly applications. Strong interest in backend development and system design, with a commitment to continuous learning and improvement.
           </p>
 
@@ -42,7 +42,7 @@ const Hero = () => {
       <img
         src="/assets/profile.png"
         alt="Portrait of Kyu Kyu Thin"
-        className="aspect-square w-[min(50vw,12rem)] rounded-full object-cover sm:w-[min(60vw,16rem)] lg:w-[min(82vw,24rem)]"
+        className="aspect-square rounded-full object-cover w-[min(60vw,10rem)] lg:w-[min(82vw,20rem)]"
       />
     </div>
   </div>

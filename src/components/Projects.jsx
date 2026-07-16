@@ -58,12 +58,12 @@ const Projects = () => {
           <div key={project.title} className="mb-6 overflow-hidden rounded-4xl border border-(--border) bg-(--surface) shadow-[0_20px_60px_rgba(0,0,0,0.08)]">
             <div className="grid gap-0 lg:grid-cols-2">
               <div className={`flex flex-col justify-center p-6 sm:p-8 lg:p-10 order-2 ${isReversed ? 'lg:order-2' : 'lg:order-1'}`}>
-                <h3 className="text-2xl font-bold tracking-tight text-(--text)">{project.title}</h3>
+                <h3 className="text-xl lg:text-2xl font-bold tracking-tight text-(--text)">{project.title}</h3>
                 <div className="mt-4">
                   {project.descriptionPoints ? (
                     <ul className="space-y-3 text-(--muted)">
                       {project.descriptionPoints.map(point => (
-                        <li key={point} className="flex gap-3 leading-7">
+                        <li key={point} className="flex gap-3 leading-5 lg:leading-7">
                           <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-(--primary)" />
                           <span>{point}</span>
                         </li>
@@ -78,13 +78,13 @@ const Projects = () => {
                     <span key={tag} className="rounded-full border border-(--border) bg-[rgba(255,142,83,0.08)] px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-(--text)">{tag}</span>
                   ))}
                 </div>
-                <div className="mt-8 flex flex-wrap gap-3">
-                  <a href={project.codeUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-2xl border border-(--border) bg-(--surface) px-5 py-3 font-semibold text-(--text) transition hover:-translate-y-0.5 hover:border-(--primary)">
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <a href={project.codeUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-2xl border border-(--border) bg-(--surface) px-3 lg:px-5 py-3 font-semibold text-(--text) transition hover:-translate-y-0.5 hover:border-(--primary)">
                     Code
                     <FontAwesomeIcon icon={faGithub} style={{fontSize:'18px'}}/>
                   </a>
                   {project.liveUrl ?(
-                  <a href={project.liveUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-2xl bg-(--primary) px-5 py-3 font-semibold text-white shadow-[0_15px_35px_rgba(255,107,107,0.28)] transition hover:-translate-y-0.5 hover:opacity-95">
+                  <a href={project.liveUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-2xl bg-(--primary) px-3 lg:px-5 py-3 font-semibold text-white shadow-[0_15px_35px_rgba(255,107,107,0.28)] transition hover:-translate-y-0.5 hover:opacity-95">
                     Live Demo
                     <FontAwesomeIcon icon={faArrowUpRightFromSquare} style={{fontSize:'16px'}} />
                   </a> 

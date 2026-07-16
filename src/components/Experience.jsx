@@ -36,7 +36,7 @@ const Experience = () => {
               </div>
               <ul className="mt-4 space-y-3 text-(--muted)">
                   {e.bullets.map(b => 
-                    <li key={b} className="flex gap-3 leading-7">
+                    <li key={b} className="flex gap-3 leading-5 lg:leading-7">
                       <span>-</span>
                           <span>{b}</span>
                         </li>

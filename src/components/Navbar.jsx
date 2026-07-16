@@ -35,7 +35,7 @@ const Navbar = ({ sections, theme, onToggleTheme }) => {
 
   return (
     <header className="sticky top-0 z-50 border-b border-(--border) bg-[color-mix(in_oklab,var(--bg)_82%,transparent)] backdrop-blur-md">
-      <nav className="relative mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-5 py-4 lg:px-8">
+      <nav className="relative mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-4 lg:px-8">
         <button
           type="button"
           className="inline-flex items-center gap-2 text-lg font-extrabold tracking-tight text-(--text) transition hover:opacity-80"
@@ -61,7 +61,7 @@ const Navbar = ({ sections, theme, onToggleTheme }) => {
             <li key={s.id} className="py-2 md:py-0 flex justify-end">
               <button
                 type="button"
-                className={`w-auto rounded-2xl border px-4 py-3 text-end text-sm font-medium transition md:w-auto md:px-4 md:py-2 ${activeId === s.id ? 'border-(--border) bg-(--surface) text-(--text)' : 'border-transparent text-(--muted) hover:border-(--border) hover:text-(--text)'}`}
+                className={`w-auto rounded-2xl border px-4 py-2 text-end text-sm font-medium transition md:w-auto md:px-2 md:py-2 ${activeId === s.id ? 'border-(--border) bg-(--surface) text-(--text)' : 'border-transparent text-(--muted) hover:border-(--border) hover:text-(--text)'}`}
                 onClick={() => handleNavClick(s.id)}
               >
                 {s.label}
