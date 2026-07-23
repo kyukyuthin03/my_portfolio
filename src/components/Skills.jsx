@@ -3,23 +3,23 @@ import React from 'react'
 const technicalSkillGroups = [
   {
     title: 'Languages',
-    items: ['Java', 'JavaScript (ES6+)', 'TypeScript']
+    items: ['Java', 'JavaScript (ES6+)', 'TypeScript', 'Python', 'SQL'],
   },
   {
     title: 'Frontend',
-    items: ['HTML5', 'Tailwind CSS', 'Bootstrap', 'React.js', 'React Native'],
+    items: ['HTML5', 'Tailwind CSS', 'Bootstrap', 'React', 'React Native'],
   },
   {
     title: 'Backend',
-    items: ['Spring Boot', 'RESTful APIs'],
+    items: ['Spring Boot', 'RESTful APIs', 'FastAPI'],
   },
   {
     title: 'Database',
-    items: ['MySQL'],
+    items: ['MySQL', 'PostgreSQL','Firebase Realtime Database'],
   },
   {
     title: 'Tools',
-    items: ['Git', 'GitHub', 'Postman', 'VS Code'],
+    items: ['Git', 'GitHub', 'Postman', 'VS Code', 'Android Studio', 'Figma'],
   },
   {
     title: 'Concepts',

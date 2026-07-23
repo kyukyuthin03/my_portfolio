@@ -7,10 +7,11 @@ const featuredProjects = [
   {
     title: 'Finance Tracker - Personal Finance Management',
     descriptionPoints: [
-      'Developed a full-stack application to track income, expenses, budgets, and savings goals',
-      'Built RESTful APIs with Spring Boot and integrated with React frontend using Axios',
-      'Implemented secure authentication using Spring Security and BCrypt',
-      'Deployed frontend and backend on Google Cloud with Docker and CI/CD pipelines'
+      'Built an application to manage income, expenses, budgets, and savings in one platform.',
+      'Developed a full-stack application with dashboard, expense tracking, and saving goals features.',
+      'Used React and Spring Boot with a RESTful architecture to create a scalable application.',
+      'Resolved authentication, API integration, and cloud deployment challenges.',
+      'Gained experience in full-stack development, secure system design, and cloud deployment.'
     ],
     image: '/assets/projects/budget-bee.png', 
     codeUrl: 'https://github.com/eaindraysupan1005/project-budget-bee',
@@ -20,10 +21,11 @@ const featuredProjects = [
   {
     title: 'EcoGo – Sustainable Living Mobile Application',
     descriptionPoints: [
-      'Designed a mobile app to encourage eco-friendly habits using a gamified points and level system',
+      'Created a mobile app to encourage sustainable habits through gamification and community engagement.',
       'Implemented features such as habit tracking, leaderboard, campaign participation, and analytics',
-      'Integrated Firebase for real-time database, authentication, and backend services',
-      'Enhanced user engagement through notifications, reminders, and community campaigns'
+      'Used React Native and Firebase for cross-platform development and real-time synchronization.',
+      'Solved asynchronous data loading and real-time synchronization issues.',
+      'Improved my skills in mobile development, state management, and Firebase integration.'
     ],
     video: 'https://www.youtube.com/embed/6z8-N721bgQ?t=3s&autoplay=1&mute=1&loop=1&playlist=6z8-N721bgQ&rel=0&modestbranding=1&controls=1&showinfo=0', 
     codeUrl: 'https://github.com/kyukyuthin03/EcoGo',
@@ -33,10 +35,11 @@ const featuredProjects = [
   {
     title: 'Lumora – Mental Health Tracking & Risk Assessment',
     descriptionPoints: [
-      'Developed a backend system for mental health monitoring with mood tracking and risk prediction',
-      'Integrated machine learning models to assess depression risk based on user data',
-      'Implemented JWT-based authentication and automated alert system for high-risk users',
-      'Built APIs for data visualization, chatbot integration, and email notifications'
+      'Developed a mental health application to assess depression risk and support early intervention.',
+      'Built frontend, backend APIs, authentication, and integrated an ML model for risk assessment.',
+      'Used React Native, FastAPI, JWT, and a modular API architecture for scalability.',
+      'Integrated machine learning predictions with the backend while ensuring reliable frontend communication.',
+      'Strengthened my knowledge in backend architecture, API integration, and AI-powered application development.'
     ],
     image: '/assets/projects/Lumora.png', 
     codeUrl: 'https://github.com/kyuthin74/Lumora',
