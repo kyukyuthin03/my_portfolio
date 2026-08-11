@@ -14,7 +14,7 @@ const featuredProjects = [
       'Gained experience in full-stack development, secure system design, and cloud deployment.'
     ],
     image: '/assets/projects/budget-bee.png', 
-    codeUrl: 'https://github.com/eaindraysupan1005/project-budget-bee',
+    codeUrl: 'https://github.com/kyuthin74/finance_tracker',
     liveUrl: 'https://project-budget-bee.vercel.app/',
     tags: ['React.js', 'HTML', 'CSS', 'Bootstrap', 'Java (Spring Boot)', 'MySQL']
   },
@@ -28,7 +28,7 @@ const featuredProjects = [
       'Improved my skills in mobile development, state management, and Firebase integration.'
     ],
     video: 'https://www.youtube.com/embed/6z8-N721bgQ?t=3s&autoplay=1&mute=1&loop=1&playlist=6z8-N721bgQ&rel=0&modestbranding=1&controls=1&showinfo=0', 
-    codeUrl: 'https://github.com/kyukyuthin03/EcoGo',
+    codeUrl: 'https://github.com/eaindraysupan1005/ecogo',
     liveUrl: 'https://play.google.com/store/apps/details?id=com.ecogo.v2',
     tags: ['React Native', 'TypeScript', 'Firebase', 'Redux']
   },
