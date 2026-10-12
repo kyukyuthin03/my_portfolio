@@ -1,7 +1,8 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
-import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
+import { faArrowUpRightFromSquare, faCircleCheck } from '@fortawesome/free-solid-svg-icons'
+import { Reveal, SectionHeading } from './Reveal.jsx'
 
 const featuredProjects = [
   {
@@ -48,90 +49,120 @@ const featuredProjects = [
   },
 ]
 
+const splitTitle = title => {
+  const [name, ...rest] = title.split(/\s[-–]\s/)
+  return { name, subtitle: rest.join(' – ') }
+}
+
+const hostOf = url => {
+  try { return new URL(url).host } catch { return '' }
+}
+
 const Projects = () => {
   return (
-    <section id="projects" className="border-b border-(--border) scroll-mt-20">
-      <div className="mx-auto w-full max-w-6xl px-5 py-10 lg:px-8">
-        <h2 className="mb-10 text-center text-3xl font-extrabold tracking-tight text-(--text)">Projects</h2>
-        
-        {featuredProjects.map((project, index) => {
-          const isReversed = index % 2 === 1
+    <section id="projects" className="relative overflow-hidden border-b border-(--border) section-alt scroll-mt-20">
+      <div className="mx-auto w-full max-w-6xl px-5 py-20 lg:px-8 lg:py-28">
+        <SectionHeading eyebrow="Selected work" title="Projects" subtitle="Full-stack and mobile apps I designed, built and deployed." />
 
-          return (
-          <div key={project.title} className="mb-6 overflow-hidden rounded-4xl border border-(--border) bg-(--surface) shadow-[0_20px_60px_rgba(0,0,0,0.08)]">
-            <div className="grid gap-0 lg:grid-cols-2">
-              <div className={`flex flex-col justify-center p-6 sm:p-8 lg:p-10 order-2 ${isReversed ? 'lg:order-2' : 'lg:order-1'}`}>
-                <h3 className="text-xl lg:text-2xl font-bold tracking-tight text-(--text)">{project.title}</h3>
-                <div className="mt-4">
-                  {project.descriptionPoints ? (
-                    <ul className="space-y-3 text-(--muted)">
-                      {project.descriptionPoints.map(point => (
-                        <li key={point} className="flex gap-3 leading-5 lg:leading-7">
-                          <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-(--primary)" />
+        <div className="space-y-24 lg:space-y-32">
+          {featuredProjects.map((project, index) => {
+            const isReversed = index % 2 === 1
+            const { name, subtitle } = splitTitle(project.title)
+            const url = project.liveUrl ? hostOf(project.liveUrl) : hostOf(project.codeUrl)
+            return (
+              <Reveal key={project.title}>
+                <article className="relative grid items-center gap-8 lg:grid-cols-12 lg:gap-12">
+                  {/* mockup */}
+                  <div className={`group relative lg:col-span-7 ${isReversed ? 'lg:order-2' : ''}`}>
+                    <div
+                      className="absolute -inset-4 rounded-[2rem] opacity-30 blur-2xl transition duration-500 group-hover:opacity-50"
+                      style={{ backgroundImage: 'var(--gradient)' }}
+                      aria-hidden
+                    />
+                    <div className="relative overflow-hidden rounded-2xl border border-(--border) bg-(--surface) shadow-(--shadow-lg) transition duration-500 group-hover:-translate-y-1.5">
+                      <div className="flex items-center gap-2 border-b border-(--border) bg-(--bg-soft) px-4 py-3">
+                        <span className="h-3 w-3 rounded-full bg-[#ff5f57]" />
+                        <span className="h-3 w-3 rounded-full bg-[#febc2e]" />
+                        <span className="h-3 w-3 rounded-full bg-[#28c840]" />
+                        <span className="ml-3 flex-1 truncate rounded-md bg-(--bg) px-3 py-1 text-xs text-(--muted)">{url}</span>
+                      </div>
+                      {project.image ? (
+                        <img src={project.image} alt={`${project.title} project preview`} loading="lazy" className="block w-full object-cover" />
+                      ) : (
+                        <div className="aspect-video w-full">
+                          <iframe
+                            src={project.video}
+                            title={`${project.title} demo video`}
+                            loading="lazy"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerPolicy="strict-origin-when-cross-origin"
+                            allowFullScreen
+                            className="h-full w-full"
+                          />
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* details */}
+                  <div className="relative lg:col-span-5">
+                    <p className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.14em] text-(--primary)">
+                      <span className="text-gradient text-2xl font-black tracking-normal">0{index + 1}</span>
+                      {subtitle && <><span className="h-px w-8 bg-(--border)" />{subtitle}</>}
+                    </p>
+                    <h3 className="mt-2 text-3xl font-extrabold tracking-tight text-(--text) lg:text-4xl">{name}</h3>
+
+                    <ul className="mt-5 space-y-3 text-(--muted)">
+                      {project.descriptionPoints.slice(0, 3).map(point => (
+                        <li key={point} className="flex gap-3 text-sm leading-6 sm:text-base">
+                          <FontAwesomeIcon icon={faCircleCheck} className="mt-1.5 shrink-0 text-(--primary)" />
                           <span>{point}</span>
                         </li>
                       ))}
                     </ul>
-                  ) : (
-                    <p className="leading-7 text-(--muted)">{project.description}</p>
-                  )}
-                </div>
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {project.tags.map(tag => (
-                    <span key={tag} className="rounded-full border border-(--border) bg-[rgba(255,142,83,0.08)] px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-(--text)">{tag}</span>
-                  ))}
-                </div>
-                <div className="mt-6 flex flex-wrap gap-3">
-                  <a href={project.codeUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-2xl border border-(--border) bg-(--surface) px-3 lg:px-5 py-3 font-semibold text-(--text) transition hover:-translate-y-0.5 hover:border-(--primary)">
-                    Code
-                    <FontAwesomeIcon icon={faGithub} style={{fontSize:'18px'}}/>
-                  </a>
-                  {project.liveUrl ?(
-                  <a href={project.liveUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-2xl bg-(--primary) px-3 lg:px-5 py-3 font-semibold text-white shadow-[0_15px_35px_rgba(255,107,107,0.28)] transition hover:-translate-y-0.5 hover:opacity-95">
-                    Live Demo
-                    <FontAwesomeIcon icon={faArrowUpRightFromSquare} style={{fontSize:'16px'}} />
-                  </a> 
-                  ) : ''}
-                
-                  
-                </div>
-              </div>
 
-                  {project.image ? (
-                                  <div className={`flex items-center justify-center bg-[linear-gradient(135deg,rgba(255,107,107,0.18),rgba(255,142,83,0.12))] p-4 sm:p-6 lg:p-8 order-1 ${isReversed ? 'lg:order-1' : 'lg:order-2'}`}>
-                <div className="overflow-hidden rounded-3xl border border-(--border) bg-(--bg)">
-                    <img
-                      src={project.image}
-                      alt={`${project.title} project preview`}
-                      className="h-full w-full object-cover"
-                    />
+                    {project.descriptionPoints.length > 3 && (
+                      <details className="group/more mt-3">
+                        <summary className="cursor-pointer text-sm font-semibold text-(--primary) marker:content-none hover:underline">
+                          <span className="group-open/more:hidden">+ More details</span>
+                          <span className="hidden group-open/more:inline">− Less</span>
+                        </summary>
+                        <ul className="mt-3 space-y-3 text-(--muted)">
+                          {project.descriptionPoints.slice(3).map(point => (
+                            <li key={point} className="flex gap-3 text-sm leading-6 sm:text-base">
+                              <FontAwesomeIcon icon={faCircleCheck} className="mt-1.5 shrink-0 text-(--primary)" />
+                              <span>{point}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </details>
+                    )}
+
+                    <div className="mt-6 flex flex-wrap gap-2">
+                      {project.tags.map(tag => (
+                        <span key={tag} className="rounded-full border border-(--border) bg-(--surface) px-3 py-1 text-xs font-semibold text-(--text)">{tag}</span>
+                      ))}
+                    </div>
+
+                    <div className="mt-8 flex flex-wrap gap-3">
+                      {project.liveUrl && (
+                        <a href={project.liveUrl} target="_blank" rel="noreferrer" className="btn-primary inline-flex items-center gap-2 rounded-xl px-5 py-3 font-semibold text-white transition hover:-translate-y-0.5 hover:brightness-110">
+                          Live Demo <FontAwesomeIcon icon={faArrowUpRightFromSquare} style={{ fontSize: '14px' }} />
+                        </a>
+                      )}
+                      <a href={project.codeUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl border border-(--border) bg-(--surface) px-5 py-3 font-semibold text-(--text) transition hover:-translate-y-0.5 hover:border-(--primary)">
+                        <FontAwesomeIcon icon={faGithub} style={{ fontSize: '18px' }} /> Code
+                      </a>
+                    </div>
                   </div>
-                </div>
-                  ) : ''}
-                  {project.video ? (
-                                  <div className={`bg-[linear-gradient(135deg,rgba(255,107,107,0.18),rgba(255,142,83,0.12))] p-4 sm:p-6 lg:p-8 order-1 ${isReversed ? 'lg:order-1' : 'lg:order-2'}`}>
-                <div className="overflow-hidden rounded-3xl py-2 lg:py-20">
-                    <iframe
-  src={project.video}
-  title="YouTube video player"
-  frameBorder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  referrerPolicy="strict-origin-when-cross-origin"
-  allowFullScreen
-    width="720"
-  height="300"
-  className="w-full max-w-4xl rounded-2xl"
-/>
-
-                  </div></div>) : ''}
-                </div>
-          </div>
-          )
-        })}
+                </article>
+              </Reveal>
+            )
+          })}
+        </div>
       </div>
     </section>
   )
 }
 
 export default Projects
-

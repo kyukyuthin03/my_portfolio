@@ -7,18 +7,20 @@ import Certificates from './components/Certificates.jsx'
 import Skills from './components/Skills.jsx'
 import Projects from './components/Projects.jsx'
 import Contact from './components/Contact.jsx'
+import Background from './components/Background.jsx'
 
 const App = () => {
   const [theme, setTheme] = useState(() => {
-    const stored = localStorage.getItem('theme')
-    if (stored) return stored
-    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-    return prefersDark ? 'dark' : 'light'
+    try {
+      const stored = localStorage.getItem('theme')
+      if (stored === 'light' || stored === 'dark') return stored
+    } catch { /* storage unavailable */ }
+    return 'dark'
   })
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme)
-    localStorage.setItem('theme', theme)
+    try { localStorage.setItem('theme', theme) } catch { /* ignore */ }
   }, [theme])
 
   const toggleTheme = () => setTheme(t => (t === 'dark' ? 'light' : 'dark'))
@@ -30,12 +32,14 @@ const App = () => {
     { id: 'experience', label: 'Experience' },
     { id: 'projects', label: 'Projects' },
     { id: 'certificates', label: 'Certificates' },
+    { id: 'contact', label: 'Contact' },
   ], [])
 
   return (
-    <div className="min-h-screen bg-(--bg) text-(--text)">
+    <div className="relative min-h-screen text-(--text)">
+      <Background />
       <Navbar sections={sections} theme={theme} onToggleTheme={toggleTheme} />
-      <main className="overflow-x-hidden">
+      <main className="relative z-10 overflow-x-hidden">
         <Hero />
         <Education />
         <Skills />
